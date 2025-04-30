@@ -5,7 +5,7 @@ Clone this repository to your local machine using Git. In your terminal or comma
 bash
 Copy
 Edit
-git clone https://github.com/yourusername/AI-Personality-Detection.git
+git clone https://github.com/Minallodhi/AI-Personality-Detection/blob/main/train_model.py
 Step 2: Create a Virtual Environment
 It’s recommended to use a virtual environment to manage the dependencies for this project.
 
