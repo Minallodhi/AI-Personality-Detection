@@ -1,96 +1,104 @@
-# AI-Personality-Detection
-Step 1: Clone the Repository
-Clone this repository to your local machine using Git. In your terminal or command prompt, run:
+# AI Personality Detection
 
-bash
-Copy
-Edit
-git clone https://github.com/Minallodhi/AI-Personality-Detection/blob/main/train_model.py
-Step 2: Create a Virtual Environment
-It’s recommended to use a virtual environment to manage the dependencies for this project.
+## Overview
 
-Navigate to your project folder:
+AI Personality Detection is a Python machine learning project that uses Natural Language Processing (NLP) to classify text into different personality traits.
 
-bash
-Copy
-Edit
+The project uses **TF-IDF** to convert text into numerical features and **Logistic Regression** for classification.
+
+## Personality Traits
+
+The prototype classifies text into:
+
+* Openness
+* Conscientiousness
+* Extraversion
+* Neuroticism
+* Agreeableness
+
+## How It Works
+
+```text
+Input Text
+    ↓
+TF-IDF Vectorization
+    ↓
+Logistic Regression
+    ↓
+Personality Trait Prediction
+```
+
+## Technologies Used
+
+* Python
+* Pandas
+* Scikit-learn
+* TF-IDF
+* Logistic Regression
+* Joblib
+
+## Project Structure
+
+```text
+AI-Personality-Detection/
+│
+├── train_model.py
+├── requirements.txt
+└── README.md
+```
+
+## Installation
+
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/Minallodhi/AI-Personality-Detection.git
+```
+
+### 2. Open the Project Folder
+
+```bash
 cd AI-Personality-Detection
-Create a virtual environment:
+```
 
-For Windows:
+### 3. Install Dependencies
 
-bash
-Copy
-Edit
-python -m venv venv
-For macOS/Linux:
-
-bash
-Copy
-Edit
-python3 -m venv venv
-Activate the virtual environment:
-
-Windows:
-
-bash
-Copy
-Edit
-venv\Scripts\activate
-macOS/Linux:
-
-bash
-Copy
-Edit
-source venv/bin/activate
-Step 3: Install Dependencies
-Now that the virtual environment is activated, you can install all the required dependencies.
-
-Create a requirements.txt file if not already present in your repo, and add the necessary libraries:
-
-txt
-Copy
-Edit
-pandas
-scikit-learn
-joblib
-Install the dependencies from the requirements.txt file:
-
-bash
-Copy
-Edit
+```bash
 pip install -r requirements.txt
-Alternatively, you can manually install the dependencies using:
+```
 
-bash
-Copy
-Edit
-pip install pandas scikit-learn joblib
-Step 4: Run the Project
-Once everything is set up and dependencies are installed, you can now train the model using the train_model.py script.
+## Run the Project
 
-Run the training script to train the model:
+Run the training script:
 
-bash
-Copy
-Edit
+```bash
 python train_model.py
-After running the script, the model and vectorizer will be saved in the models/ directory.
+```
 
-Step 5: Use the Trained Model for Prediction
-To use the saved model and vectorizer for making predictions, you can load them with the following code:
+The trained model and TF-IDF vectorizer are saved in the `models/` directory.
 
-python
-Copy
-Edit
-import joblib
+## Example
 
-# Load the model and vectorizer
-model = joblib.load('models/personality_model.pkl')
-vectorizer = joblib.load('models/tfidf_vectorizer.pkl')
+Example text:
+
+```text
+I enjoy socializing with friends.
+```
+
+The trained model can use the text to predict one of the personality traits.
+
+## Note
+
+This is a learning prototype using a small sample dataset to demonstrate NLP-based text classification. It is not intended to be used as a validated psychological assessment tool.
+
+## Author
+
+**Minal Lodhi**
 
 # Example text input
 text = ["I enjoy socializing with friends."]
+
 X = vectorizer.transform(text)
 prediction = model.predict(X)
+
 print(prediction)
